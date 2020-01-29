@@ -1,7 +1,7 @@
 
 
 const sendLocation = (data,callback)=>{
-    fetch('http://127.0.0.1:3000/weather?address='+data).then((response)=>{
+    fetch('/weather?address='+data).then((response)=>{
         response.json().then((data)=>{
             if(data.error){
                 return callback(data.error,undefined)
@@ -11,16 +11,6 @@ const sendLocation = (data,callback)=>{
         })
     })    
 }
-// fetch('http://127.0.0.1:3000/weather?address=').then((response)=>{
-//     response.json().then((data)=>{
-//         if(data.error){
-//             return console.log(data.error)
-//         }else{
-//             console.log(data)
-//         }
-//     })
-// })
-
 const weatherForm = document.querySelector('form')
 const search = document.querySelector('input')
 const messageOne = document.querySelector('#message-1')//# : when i use id
